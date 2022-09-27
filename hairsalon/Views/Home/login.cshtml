@@ -1,0 +1,106 @@
+﻿
+@{
+    ViewBag.Title = "ورود یا ثبت نام";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+}
+
+
+
+<!-- ======= Breadcrumbs ======= -->
+<div class="breadcrumbs">
+    <div class="page-header d-flex align-items-center" style="background-image: url(@Url.Content("~/assets/img/herobg.svg"));">
+        <div class="container position-relative">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <h2>ورود یا ثبت نام</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav>
+        <div class="container">
+            <ol>
+                <li><a href="/Home/Index">صفحه اصلی</a></li>
+                <li> ورود یا ثبت نام</li>
+            </ol>
+        </div>
+    </nav>
+</div><!-- End Breadcrumbs -->
+<!-- ======= profile Section ======= -->
+<section id="profile" class="profile">
+    <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card" style="padding: 20px;">
+
+                    <ul class="nav nav-pills nav-fill mb-3" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="pills-signIn-tab" data-bs-toggle="pill" data-bs-target="#pills-signIn" type="button" role="tab" aria-controls="pills-edit" aria-selected="ture">ورود</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-password-tab" data-bs-toggle="pill" data-bs-target="#pills-password" type="button" role="tab" aria-controls="pills-password" aria-selected="false">ثبت نام</button>
+                        </li>
+                    </ul>
+
+                    <!-- edit tab content -->
+                    <div class="tab-content" id="pills-tabContent">
+
+                        <div class="tab-pane fade show active" id="pills-signIn" role="tabpanel" aria-labelledby="pills-signIn-tab" tabindex="0">
+
+                            <div class="p-5 pt-0">
+                                <form class="">
+                                    <div class="mb-3">
+                                        <label for="mobileInput">شماره موبایل</label>
+                                        <input type="tel" class="form-control rounded-3" id="mobileInput">
+
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="passwordInput">کلمه عبور</label>
+                                        <input type="password" class="form-control rounded-3" id="passwordInput">
+
+                                    </div>
+                                    <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">ورود به سایت</button>
+                                </form>
+                            </div>
+
+                        </div>
+                        <div class="tab-pane fade" id="pills-password" role="tabpanel" aria-labelledby="pills-password-tab" tabindex="0">
+
+                            <div class="p-5 pt-0">
+                                <form class="">
+                                    <div class="mb-3">
+                                        <label for="mobileInput">شماره موبایل</label>
+                                        <input type="tel" class="form-control rounded-3" id="mobileInput">
+
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="codeInput">کد فعالسازی</label>
+                                        <input type="text" class="form-control rounded-3" id="codeInput" placeholder="کد فعالسازی پیامک شده را وارد کنید">
+
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="passwordInput">کلمه عبور</label>
+                                        <input type="password" class="form-control rounded-3" id="passwordInput">
+
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="passwordRepeatInput">تکرار کلمه عبور</label>
+                                        <input type="passwordRepeat" class="form-control rounded-3" id="passwordRepeatInput">
+
+                                    </div>
+                                    <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">ثبت نام در سایت</button>
+                                </form>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- End profile Section -->

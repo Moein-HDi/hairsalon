@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>@ViewBag.Title</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="@Url.Content("~/assets/img/apple-icon-57x57.png")">
+    <link rel="apple-touch-icon" sizes="60x60" href="@Url.Content("~/assets/img/apple-icon-60x60.png")">
+    <link rel="apple-touch-icon" sizes="72x72" href="@Url.Content("~/assets/img/apple-icon-72x72.png")">
+    <link rel="apple-touch-icon" sizes="76x76" href="@Url.Content("~/assets/img/apple-icon-76x76.png")">
+    <link rel="apple-touch-icon" sizes="114x114" href="@Url.Content("~/assets/img/apple-icon-114x114.png")">
+    <link rel="apple-touch-icon" sizes="120x120" href="@Url.Content("~/assets/img/apple-icon-120x120.png")">
+    <link rel="apple-touch-icon" sizes="144x144" href="@Url.Content("~/assets/img/apple-icon-144x144.png")">
+    <link rel="apple-touch-icon" sizes="152x152" href="@Url.Content("~/assets/img/apple-icon-152x152.png")">
+    <link rel="apple-touch-icon" sizes="180x180" href="@Url.Content("~/assets/img/apple-icon-180x180.png")">
+    <link rel="icon" type="image/png" sizes="192x192" href="@Url.Content("~/assets/img/android-icon-192x192.png")">
+    <link rel="icon" type="image/png" sizes="32x32" href="@Url.Content("~/assets/img/favicon-32x32.png")">
+    <link rel="icon" type="image/png" sizes="96x96" href="@Url.Content("~/assets/img/favicon-96x96.png")">
+    <link rel="icon" type="image/png" sizes="16x16" href="@Url.Content("~/assets/img/favicon-16x16.png")">
+    <link rel="manifest" href="@Url.Content("~/assets/img/manifest.json")">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="@Url.Content("~/assets/img/ms-icon-144x144.png")">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="@Url.Content("~/assets/vendor/bootstrap/css/bootstrap.min.css")" rel="stylesheet">
+    <link href="@Url.Content("~/assets/vendor/bootstrap-icons/bootstrap-icons.css")" rel="stylesheet">
+    <link href="@Url.Content("~/assets/vendor/fontawesome-free/css/all.min.css")" rel="stylesheet">
+    <link href="@Url.Content("~/assets/vendor/glightbox/css/glightbox.min.css")" rel="stylesheet">
+    <link href="@Url.Content("~/assets/vendor/swiper/swiper-bundle.min.css")" rel="stylesheet">
+    <link href="@Url.Content("~/assets/vendor/aos/aos.css")" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="@Url.Content("~/assets/css/main.css")" rel="stylesheet">
+
+</head>
+<body dir="rtl">
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+            <a href="index.html" class="logo d-flex align-items-center">
+                <!-- Uncomment the line below if you also wish to use an image logo -->
+                <img src="@Url.Content("~/assets/img/hairsalon_logo.svg")" alt="">
+
+            </a>
+
+            <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+            <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li>@Html.ActionLink("صفحه اصلی", "Index")</li>
+                    <li><a href="#service">خدمات ما</a></li>
+                    <li>@Html.ActionLink("تماس با ما", "Contact")</li>
+                    <li><a href="#">درباره ما</a></li>
+                    <li><a class="profile" href="/Home/login">ورود یا ثبت نام</a></li>
+
+
+                </ul>
+
+
+
+
+            </nav><!-- .navbar -->
+
+        </div>
+    </header><!-- End Header -->
+    <!-- End Header -->
+
+
+    <div class="d-flex flex-column min-vh-100">
+        @RenderBody()
+        
+    </div>
+
+
+    <!-- ======= Footer ======= -->
+    <div id="footer" class="footer">
+        <div class="container mt-auto">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4">
+                <p class="col-md-4 mb-0"> &copy; کلیه حقوق مادی و معنوی برای  <strong><span>شرکت هوشمند سازان هستی</span></strong> محفوظ می باشد - @DateTime.Now.Year</p>
+
+                <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                    <img class="bi me-2" width="40" height="32" src="@Url.Content("~/assets/img/hairsalon_logo.svg")" alt="">
+                </a>
+
+                <ul class="nav col-md-4 justify-content-end">
+                    <li><a href="/Home/Index" class="active nav-link px-2">صفحه اصلی</a></li>
+                    <li><a href="#service" class="nav-link px-2">خدمات ما</a></li>
+                    <li><a href="#" class="nav-link px-2">تماس با ما</a></li>
+                    <li><a href="#" class="nav-link px-2">درباره ما</a></li>
+                    <li><a href="/Home/login" class="nav-link px-2">ورود یا ثبت نام</a></li>
+                </ul>
+            </footer>
+        </div>
+    </div>
+    <!-- End Footer -->
+
+
+    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="@Url.Content("~/assets/vendor/bootstrap/js/bootstrap.bundle.min.js")"></script>
+    <script src="@Url.Content("~/assets/vendor/purecounter/purecounter_vanilla.js")"></script>
+    <script src="@Url.Content("~/assets/vendor/glightbox/js/glightbox.min.js")"></script>
+    <script src="@Url.Content("~/assets/vendor/swiper/swiper-bundle.min.js")"></script>
+    <script src="@Url.Content("~/assets/vendor/aos/aos.js")"></script>
+    <script src="@Url.Content("~/assets/vendor/php-email-form/validate.js")"></script>
+
+    <!-- Template Main JS File -->
+    <script src="@Url.Content("~/assets/js/main.js")"></script>
+</body>
+</html>

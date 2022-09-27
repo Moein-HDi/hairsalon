@@ -1,0 +1,426 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{92C05B90-4470-45DC-B87B-54B9E50006A1}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>hairsalon</RootNamespace>
+    <AssemblyName>hairsalon</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44376</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.1\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.9\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.9\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\fonts\shabnam\sample.png" />
+    <Content Include="assets\css\main.css" />
+    <Content Include="assets\img\android-icon-144x144.png" />
+    <Content Include="assets\img\android-icon-192x192.png" />
+    <Content Include="assets\img\android-icon-36x36.png" />
+    <Content Include="assets\img\android-icon-48x48.png" />
+    <Content Include="assets\img\android-icon-72x72.png" />
+    <Content Include="assets\img\android-icon-96x96.png" />
+    <Content Include="assets\img\apple-icon-114x114.png" />
+    <Content Include="assets\img\apple-icon-120x120.png" />
+    <Content Include="assets\img\apple-icon-144x144.png" />
+    <Content Include="assets\img\apple-icon-152x152.png" />
+    <Content Include="assets\img\apple-icon-180x180.png" />
+    <Content Include="assets\img\apple-icon-57x57.png" />
+    <Content Include="assets\img\apple-icon-60x60.png" />
+    <Content Include="assets\img\apple-icon-72x72.png" />
+    <Content Include="assets\img\apple-icon-76x76.png" />
+    <Content Include="assets\img\apple-icon-precomposed.png" />
+    <Content Include="assets\img\apple-icon.png" />
+    <Content Include="assets\img\apple-touch-icon.png" />
+    <Content Include="assets\img\browserconfig.xml" />
+    <Content Include="assets\img\cleaning.svg" />
+    <Content Include="assets\img\epilasion.svg" />
+    <Content Include="assets\img\eyebrow.svg" />
+    <Content Include="assets\img\favicon-16x16.png" />
+    <Content Include="assets\img\favicon-32x32.png" />
+    <Content Include="assets\img\favicon-96x96.png" />
+    <Content Include="assets\img\favicon.ico" />
+    <Content Include="assets\img\favicon.png" />
+    <Content Include="assets\img\hairsalon_logo.svg" />
+    <Content Include="assets\img\hair_cutting.svg" />
+    <Content Include="assets\img\hair_dye.svg" />
+    <Content Include="assets\img\hero-img.svg" />
+    <Content Include="assets\img\herobg.svg" />
+    <Content Include="assets\img\Icon feather-search.svg" />
+    <Content Include="assets\img\landing_banner.svg" />
+    <Content Include="assets\img\logo.png" />
+    <Content Include="assets\img\makeup.svg" />
+    <Content Include="assets\img\ms-icon-144x144.png" />
+    <Content Include="assets\img\ms-icon-150x150.png" />
+    <Content Include="assets\img\ms-icon-310x310.png" />
+    <Content Include="assets\img\ms-icon-70x70.png" />
+    <Content Include="assets\img\nails.svg" />
+    <Content Include="assets\img\shinion.svg" />
+    <Content Include="assets\js\main.js" />
+    <Content Include="assets\vendor\aos\aos.css" />
+    <Content Include="assets\vendor\aos\aos.js" />
+    <Content Include="assets\vendor\bootstrap-icons\bootstrap-icons.css" />
+    <Content Include="assets\vendor\bootstrap-icons\index.html" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap-grid.rtl.css" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap-grid.rtl.min.css" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap-reboot.rtl.css" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap-utilities.css" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap-utilities.min.css" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap-utilities.rtl.css" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap.rtl.css" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap.rtl.min.css" />
+    <Content Include="assets\vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="assets\vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="assets\vendor\bootstrap\js\bootstrap.esm.js" />
+    <Content Include="assets\vendor\bootstrap\js\bootstrap.esm.min.js" />
+    <Content Include="assets\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="assets\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="assets\vendor\fontawesome-free\css\all.css" />
+    <Content Include="assets\vendor\fontawesome-free\css\all.min.css" />
+    <Content Include="assets\vendor\fontawesome-free\css\brands.css" />
+    <Content Include="assets\vendor\fontawesome-free\css\brands.min.css" />
+    <Content Include="assets\vendor\fontawesome-free\css\fontawesome.css" />
+    <Content Include="assets\vendor\fontawesome-free\css\fontawesome.min.css" />
+    <Content Include="assets\vendor\fontawesome-free\css\regular.css" />
+    <Content Include="assets\vendor\fontawesome-free\css\regular.min.css" />
+    <Content Include="assets\vendor\fontawesome-free\css\solid.css" />
+    <Content Include="assets\vendor\fontawesome-free\css\solid.min.css" />
+    <Content Include="assets\vendor\fontawesome-free\css\svg-with-js.css" />
+    <Content Include="assets\vendor\fontawesome-free\css\svg-with-js.min.css" />
+    <Content Include="assets\vendor\fontawesome-free\css\v4-font-face.css" />
+    <Content Include="assets\vendor\fontawesome-free\css\v4-font-face.min.css" />
+    <Content Include="assets\vendor\fontawesome-free\css\v4-shims.css" />
+    <Content Include="assets\vendor\fontawesome-free\css\v4-shims.min.css" />
+    <Content Include="assets\vendor\fontawesome-free\css\v5-font-face.css" />
+    <Content Include="assets\vendor\fontawesome-free\css\v5-font-face.min.css" />
+    <Content Include="assets\vendor\glightbox\css\glightbox.css" />
+    <Content Include="assets\vendor\glightbox\css\glightbox.min.css" />
+    <Content Include="assets\vendor\glightbox\css\plyr.css" />
+    <Content Include="assets\vendor\glightbox\css\plyr.min.css" />
+    <Content Include="assets\vendor\glightbox\js\glightbox.js" />
+    <Content Include="assets\vendor\glightbox\js\glightbox.min.js" />
+    <Content Include="assets\vendor\php-email-form\validate.js" />
+    <Content Include="assets\vendor\purecounter\purecounter_vanilla.js" />
+    <Content Include="assets\vendor\swiper\swiper-bundle.min.css" />
+    <Content Include="assets\vendor\swiper\swiper-bundle.min.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="assets\css\fonts\shabnam\CHANGELOG.md" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits-Without-Latin\Shabnam-Bold-FD-WOL.eot" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits-Without-Latin\Shabnam-Bold-FD-WOL.ttf" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits-Without-Latin\Shabnam-Bold-FD-WOL.woff" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits-Without-Latin\Shabnam-Bold-FD-WOL.woff2" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits-Without-Latin\Shabnam-FD-WOL.eot" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits-Without-Latin\Shabnam-FD-WOL.ttf" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits-Without-Latin\Shabnam-FD-WOL.woff" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits-Without-Latin\Shabnam-FD-WOL.woff2" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits-Without-Latin\Shabnam-Light-FD-WOL.eot" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits-Without-Latin\Shabnam-Light-FD-WOL.ttf" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits-Without-Latin\Shabnam-Light-FD-WOL.woff" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits-Without-Latin\Shabnam-Light-FD-WOL.woff2" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits-Without-Latin\Shabnam-Medium-FD-WOL.eot" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits-Without-Latin\Shabnam-Medium-FD-WOL.ttf" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits-Without-Latin\Shabnam-Medium-FD-WOL.woff" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits-Without-Latin\Shabnam-Medium-FD-WOL.woff2" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits-Without-Latin\Shabnam-Thin-FD-WOL.eot" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits-Without-Latin\Shabnam-Thin-FD-WOL.ttf" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits-Without-Latin\Shabnam-Thin-FD-WOL.woff" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits-Without-Latin\Shabnam-Thin-FD-WOL.woff2" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits\Shabnam-Bold-FD.eot" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits\Shabnam-Bold-FD.ttf" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits\Shabnam-Bold-FD.woff" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits\Shabnam-Bold-FD.woff2" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits\Shabnam-FD.eot" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits\Shabnam-FD.ttf" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits\Shabnam-FD.woff" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits\Shabnam-FD.woff2" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits\Shabnam-Light-FD.eot" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits\Shabnam-Light-FD.ttf" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits\Shabnam-Light-FD.woff" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits\Shabnam-Light-FD.woff2" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits\Shabnam-Medium-FD.eot" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits\Shabnam-Medium-FD.ttf" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits\Shabnam-Medium-FD.woff" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits\Shabnam-Medium-FD.woff2" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits\Shabnam-Thin-FD.eot" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits\Shabnam-Thin-FD.ttf" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits\Shabnam-Thin-FD.woff" />
+    <Content Include="assets\css\fonts\shabnam\Farsi-Digits\Shabnam-Thin-FD.woff2" />
+    <Content Include="assets\css\fonts\shabnam\LICENSE" />
+    <Content Include="assets\css\fonts\shabnam\README.md" />
+    <Content Include="assets\css\fonts\shabnam\Shabnam-Bold.eot" />
+    <Content Include="assets\css\fonts\shabnam\Shabnam-Bold.ttf" />
+    <Content Include="assets\css\fonts\shabnam\Shabnam-Bold.woff" />
+    <Content Include="assets\css\fonts\shabnam\Shabnam-Bold.woff2" />
+    <Content Include="assets\css\fonts\shabnam\Shabnam-Light.eot" />
+    <Content Include="assets\css\fonts\shabnam\Shabnam-Light.ttf" />
+    <Content Include="assets\css\fonts\shabnam\Shabnam-Light.woff" />
+    <Content Include="assets\css\fonts\shabnam\Shabnam-Light.woff2" />
+    <Content Include="assets\css\fonts\shabnam\Shabnam-Medium.eot" />
+    <Content Include="assets\css\fonts\shabnam\Shabnam-Medium.ttf" />
+    <Content Include="assets\css\fonts\shabnam\Shabnam-Medium.woff" />
+    <Content Include="assets\css\fonts\shabnam\Shabnam-Medium.woff2" />
+    <Content Include="assets\css\fonts\shabnam\Shabnam-Thin.eot" />
+    <Content Include="assets\css\fonts\shabnam\Shabnam-Thin.ttf" />
+    <Content Include="assets\css\fonts\shabnam\Shabnam-Thin.woff" />
+    <Content Include="assets\css\fonts\shabnam\Shabnam-Thin.woff2" />
+    <Content Include="assets\css\fonts\shabnam\Shabnam.eot" />
+    <Content Include="assets\css\fonts\shabnam\Shabnam.ttf" />
+    <Content Include="assets\css\fonts\shabnam\Shabnam.woff" />
+    <Content Include="assets\css\fonts\shabnam\Shabnam.woff2" />
+    <Content Include="assets\css\fonts\shabnam\Without-Latin\Shabnam-Bold-WOL.eot" />
+    <Content Include="assets\css\fonts\shabnam\Without-Latin\Shabnam-Bold-WOL.ttf" />
+    <Content Include="assets\css\fonts\shabnam\Without-Latin\Shabnam-Bold-WOL.woff" />
+    <Content Include="assets\css\fonts\shabnam\Without-Latin\Shabnam-Bold-WOL.woff2" />
+    <Content Include="assets\css\fonts\shabnam\Without-Latin\Shabnam-Light-WOL.eot" />
+    <Content Include="assets\css\fonts\shabnam\Without-Latin\Shabnam-Light-WOL.ttf" />
+    <Content Include="assets\css\fonts\shabnam\Without-Latin\Shabnam-Light-WOL.woff" />
+    <Content Include="assets\css\fonts\shabnam\Without-Latin\Shabnam-Light-WOL.woff2" />
+    <Content Include="assets\css\fonts\shabnam\Without-Latin\Shabnam-Medium-WOL.eot" />
+    <Content Include="assets\css\fonts\shabnam\Without-Latin\Shabnam-Medium-WOL.ttf" />
+    <Content Include="assets\css\fonts\shabnam\Without-Latin\Shabnam-Medium-WOL.woff" />
+    <Content Include="assets\css\fonts\shabnam\Without-Latin\Shabnam-Medium-WOL.woff2" />
+    <Content Include="assets\css\fonts\shabnam\Without-Latin\Shabnam-Thin-WOL.eot" />
+    <Content Include="assets\css\fonts\shabnam\Without-Latin\Shabnam-Thin-WOL.ttf" />
+    <Content Include="assets\css\fonts\shabnam\Without-Latin\Shabnam-Thin-WOL.woff" />
+    <Content Include="assets\css\fonts\shabnam\Without-Latin\Shabnam-Thin-WOL.woff2" />
+    <Content Include="assets\css\fonts\shabnam\Without-Latin\Shabnam-WOL.eot" />
+    <Content Include="assets\css\fonts\shabnam\Without-Latin\Shabnam-WOL.ttf" />
+    <Content Include="assets\css\fonts\shabnam\Without-Latin\Shabnam-WOL.woff" />
+    <Content Include="assets\css\fonts\shabnam\Without-Latin\Shabnam-WOL.woff2" />
+    <Content Include="assets\vendor\bootstrap-icons\bootstrap-icons.json" />
+    <Content Include="assets\vendor\bootstrap-icons\fonts\bootstrap-icons.woff" />
+    <Content Include="assets\vendor\bootstrap-icons\fonts\bootstrap-icons.woff2" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap-grid.rtl.css.map" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap-utilities.css.map" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap-utilities.min.css.map" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap.rtl.css.map" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap.rtl.min.css.map" />
+    <Content Include="assets\vendor\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="assets\vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="assets\vendor\bootstrap\js\bootstrap.esm.js.map" />
+    <Content Include="assets\vendor\bootstrap\js\bootstrap.esm.min.js.map" />
+    <Content Include="assets\vendor\bootstrap\js\bootstrap.js.map" />
+    <Content Include="assets\vendor\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="assets\vendor\fontawesome-free\webfonts\fa-brands-400.ttf" />
+    <Content Include="assets\vendor\fontawesome-free\webfonts\fa-brands-400.woff2" />
+    <Content Include="assets\vendor\fontawesome-free\webfonts\fa-regular-400.ttf" />
+    <Content Include="assets\vendor\fontawesome-free\webfonts\fa-regular-400.woff2" />
+    <Content Include="assets\vendor\fontawesome-free\webfonts\fa-solid-900.ttf" />
+    <Content Include="assets\vendor\fontawesome-free\webfonts\fa-solid-900.woff2" />
+    <Content Include="assets\vendor\fontawesome-free\webfonts\fa-v4compatibility.ttf" />
+    <Content Include="assets\vendor\fontawesome-free\webfonts\fa-v4compatibility.woff2" />
+    <Content Include="assets\img\manifest.json" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\login.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49738</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44376/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
