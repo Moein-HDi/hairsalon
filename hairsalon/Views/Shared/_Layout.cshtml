@@ -59,11 +59,12 @@
             <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li>@Html.ActionLink("صفحه اصلی", "Index")</li>
-                    <li><a href="#service">خدمات ما</a></li>
+                    <li>@Html.ActionLink("صفحه اصلی", "../Home/Index")</li>
+                    <li><a href="../Home#service">خدمات ما</a></li>
                     <li>@Html.ActionLink("تماس با ما", "Contact")</li>
+                    @*should change*@
                     <li><a href="#">درباره ما</a></li>
-                    <li><a class="profile" href="/Home/login">ورود یا ثبت نام</a></li>
+                    <li><a class="profile" href="/Account">ورود به حساب</a></li>
 
 
                 </ul>
@@ -99,7 +100,7 @@
                     <li><a href="#service" class="nav-link px-2">خدمات ما</a></li>
                     <li><a href="#" class="nav-link px-2">تماس با ما</a></li>
                     <li><a href="#" class="nav-link px-2">درباره ما</a></li>
-                    <li><a href="/Home/login" class="nav-link px-2">ورود یا ثبت نام</a></li>
+                    <li><a href="/Account" class="nav-link px-2">ورود به حساب</a></li>
                 </ul>
             </footer>
         </div>

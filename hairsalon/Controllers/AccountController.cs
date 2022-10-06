@@ -6,20 +6,12 @@ using System.Web.Mvc;
 
 namespace hairsalon.Controllers
 {
-    public class HomeController : Controller
+    public class AccountController : Controller
     {
+        // GET: Account
         public ActionResult Index()
         {
             return View();
         }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        
     }
 }
