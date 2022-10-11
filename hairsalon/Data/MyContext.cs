@@ -8,7 +8,7 @@ namespace hairsalon.Data
 {
     public class MyContext : DbContext
     {
-        public MyContext() : base("name=MyConnectionString")
+        public MyContext() : base("name=MyConnection")
         {
 
         }
