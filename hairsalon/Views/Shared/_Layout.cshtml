@@ -62,11 +62,8 @@
                     <li>@Html.ActionLink("صفحه اصلی", "../Home/Index")</li>
                     <li><a href="../Home#service">خدمات ما</a></li>
                     <li>@Html.ActionLink("تماس با ما", "Contact")</li>
-                    @*should change*@
-                    <li><a href="#">درباره ما</a></li>
+                    <li>@Html.ActionLink("درباره ما", "../Home/About")</li>
                     <li><a class="profile" href="/Account">ورود به حساب</a></li>
-
-
                 </ul>
 
 
@@ -81,7 +78,7 @@
 
     <div class="d-flex flex-column min-vh-100">
         @RenderBody()
-        
+
     </div>
 
 
