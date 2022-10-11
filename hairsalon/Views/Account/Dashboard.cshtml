@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewBag.Title = "پروفایل من";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.Partial("_PartialHeader")
+
+<!-- ======= profile Section ======= -->
+<section id="profile" class="profile">
+    <div class="container" data-aos="fade-up">
+        <div class="card" style="padding: 20px;">
+            <ul class="nav nav-pills nav-fill mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="true">پروفایل من</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-edit-tab" data-bs-toggle="pill" data-bs-target="#pills-edit" type="button" role="tab" aria-controls="pills-edit" aria-selected="false">ویرایش اطلاعات</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-transactions-tab" data-bs-toggle="pill" data-bs-target="#pills-transactions" type="button" role="tab" aria-controls="pills-transactions" aria-selected="false">تراکنش ها</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-password-tab" data-bs-toggle="pill" data-bs-target="#pills-password" type="button" role="tab" aria-controls="pills-password" aria-selected="false">تغییر کلمه عبور</button>
+                </li>
+            </ul>
+
+            <!-- edit tab content -->
+            <div class="tab-content" id="pills-tabContent">
+
+
+                <div class="tab-pane fade show active" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">...</div>
+
+
+                <div class="tab-pane fade" id="pills-edit" role="tabpanel" aria-labelledby="pills-edit-tab" tabindex="0">
+
+                    <form class="row g-3">
+                        <div class="col-md-6">
+                            <label for="inputFname4" class="form-label">نام</label>
+                            <input type="text" class="form-control" id="inputFname4">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputLname4" class="form-label">نام خانوادگی</label>
+                            <input type="text" class="form-control" id="inputLname4">
+                        </div>
+                        <div class="col-12">
+                            <label for="inputAddress" class="form-label">شماره موبایل</label>
+                            <input type="tel" class="form-control" id="inputAddress" placeholder="مثال: 09123456789">
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">ویرایش اطلاعات</button>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="tab-pane fade" id="pills-transactions" role="tabpanel" aria-labelledby="pills-transactions-tab" tabindex="0">...</div>
+                <div class="tab-pane fade" id="pills-password" role="tabpanel" aria-labelledby="pills-password-tab" tabindex="0">
+
+                    <form class="row g-3">
+                        <div class="col-md-6">
+                            <label for="inputFname4" class="form-label required">کلمه عبور فعلی</label>
+                            <input type="password" class="form-control" id="inputFname4">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputLname4" class="form-label">کلمه عبور جدید</label>
+                            <input type="password" class="form-control" id="inputLname4">
+                        </div>
+                        <div class="col-12">
+                            <label for="inputAddress" class="form-label">تکرار کلمه عبور جدید</label>
+                            <input type="password" class="form-control" id="inputAddress">
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">تغییر رمز عبور</button>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section><!-- End profile Section -->

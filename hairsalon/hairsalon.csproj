@@ -379,6 +379,7 @@
     <Content Include="Views\Account\VerifyNumber.cshtml" />
     <Content Include="Views\Account\SetPassowrd.cshtml" />
     <Content Include="Views\Shared\_PartialHeader.cshtml" />
+    <Content Include="Views\Account\Dashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
