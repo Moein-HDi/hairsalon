@@ -1,31 +1,14 @@
-﻿@{
+﻿@model hairsalon.Models.CheckPhoneVM
+@{
     ViewBag.Title = "ورود به حساب";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
 }
 
 
+@Html.Partial("_PartialHeader")
 
-<!-- ======= Breadcrumbs ======= -->
-<div class="breadcrumbs">
-    <div class="page-header d-flex align-items-center" style="background-image: url(@Url.Content("~/assets/img/herobg.svg"));">
-        <div class="container position-relative">
-            <div class="row d-flex justify-content-center">
-                <div class="col-lg-6 text-center">
-                    <h2>ورود به حساب</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-    <nav>
-        <div class="container">
-            <ol>
-                <li><a href="/Home/Index">صفحه اصلی</a></li>
-                <li> ورود به حساب</li>
-            </ol>
-        </div>
-    </nav>
-</div><!-- End Breadcrumbs -->
+
 <!-- ======= profile Section ======= -->
 <section id="profile" class="profile">
     <div class="container" data-aos="fade-up">
@@ -34,15 +17,15 @@
                 <div class="card" style="padding: 20px;">
 
                     <div class="p-5 pt-0">
-                        <form class="">
+                        <form asp-action="Index" method="post">
                             <div class="mb-3">
+                                
                                 <label for="mobileInput">شماره موبایل خود را وارد کنید:</label>
-                                @*should change*@
-                                <input type="tel" class="form-control rounded-3" id="mobileInput" placeholder="مثال: 09123456789">
-
+                                @Html.TextBoxFor(m => m.PhoneNumber, new { @class="form-control rounded-3", @maxlength="11" , @id="mobileInput", @placeholder="مثال: 09123456789" })
+                                @Html.ValidationMessageFor(m => m.PhoneNumber, "", new { @class = "text-danger" })
                             </div>
                             @*should change*@
-                            <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">ورود به حساب کاربری</button>
+                            <button value="Index" class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">ورود به حساب کاربری</input>
                         </form>
                     </div>
 

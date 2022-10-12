@@ -1,4 +1,5 @@
-﻿using System;
+﻿using hairsalon.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +12,16 @@ namespace hairsalon.Controllers
         // GET: Account
         public ActionResult Index()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Index(CheckPhoneVM phone)
+        {
+            if(!ModelState.IsValid)
+            {
+                return View();
+            }
             return View();
         }
 
