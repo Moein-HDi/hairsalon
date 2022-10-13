@@ -138,6 +138,10 @@
     <Compile Include="Migrations\202210112002531_firstMigration_addDB.designer.cs">
       <DependentUpon>202210112002531_firstMigration_addDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202210121426165_firstMigration_addDB1.cs" />
+    <Compile Include="Migrations\202210121426165_firstMigration_addDB1.designer.cs">
+      <DependentUpon>202210121426165_firstMigration_addDB1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CheckPhoneVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -407,6 +411,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202210112002531_firstMigration_addDB.resx">
       <DependentUpon>202210112002531_firstMigration_addDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202210121426165_firstMigration_addDB1.resx">
+      <DependentUpon>202210121426165_firstMigration_addDB1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
