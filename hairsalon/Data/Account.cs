@@ -9,7 +9,8 @@ namespace hairsalon.Data
     public class Account
     {
         public int Id { get; set; }
-        public int PhoneNumber { get; set; }
+        [MaxLength(30)]
+        public string PhoneNumber { get; set; }
         [MaxLength(30)]
         public string Role { get; set; }
         [MaxLength(30)]

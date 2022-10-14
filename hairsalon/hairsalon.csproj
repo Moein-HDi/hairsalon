@@ -142,8 +142,13 @@
     <Compile Include="Migrations\202210121426165_firstMigration_addDB1.designer.cs">
       <DependentUpon>202210121426165_firstMigration_addDB1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202210131653030_secondmigration.cs" />
+    <Compile Include="Migrations\202210131653030_secondmigration.designer.cs">
+      <DependentUpon>202210131653030_secondmigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CheckPhoneVM.cs" />
+    <Compile Include="Models\SetPasswordVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -396,9 +401,9 @@
     <Content Include="Views\Account\Index.cshtml" />
     <Content Include="Views\Account\EnterPassword.cshtml" />
     <Content Include="Views\Account\VerifyNumber.cshtml" />
-    <Content Include="Views\Account\SetPassowrd.cshtml" />
     <Content Include="Views\Shared\_PartialHeader.cshtml" />
     <Content Include="Views\Account\Dashboard.cshtml" />
+    <Content Include="Views\Account\SetPassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -414,6 +419,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202210121426165_firstMigration_addDB1.resx">
       <DependentUpon>202210121426165_firstMigration_addDB1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202210131653030_secondmigration.resx">
+      <DependentUpon>202210131653030_secondmigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
