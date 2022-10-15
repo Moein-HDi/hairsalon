@@ -1,8 +1,39 @@
-﻿
+﻿@model hairsalon.Models.VerifyNumberVM
 @{
-    ViewBag.Title = "VerifyNumber";
+    ViewBag.Title = "تایید شماره موبایل";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>VerifyNumber</h2>
+@Html.Partial("_PartialHeader")
 
+<!-- ======= profile Section ======= -->
+<section id="profile" class="profile">
+    <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card" style="padding: 20px;">
+
+                    <div class="p-5 pt-0">
+                        <form asp-action="VerifyNumber" method="post">
+                            <div class="mb-3">
+
+                                <div class="alert alert-success alert-dismissible fade in" style="display:@ViewBag.visible">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                    <strong>خطا در فعالسازی</strong>  @ViewBag.error
+                                </div>
+                                <span>دمو: کد فعالسازی: @Session["Code"].ToString()</span>
+                                <label for="codeInput">کد ارسال شده را وارد کنید:</label>
+                                @Html.TextBoxFor(m => m.VerificationCode, new { @class = "form-control rounded-3", @id = "codeInput" })
+                                @Html.ValidationMessageFor(m => m.VerificationCode, "", new { @class = "text-danger" })
+
+                            </div>
+
+                            <button value="VerifyNumber" class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">ثبت کد فعالسازی</input>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- End profile Section -->

@@ -148,7 +148,9 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CheckPhoneVM.cs" />
+    <Compile Include="Models\EnterPasswordVM.cs" />
     <Compile Include="Models\SetPasswordVM.cs" />
+    <Compile Include="Models\VerifyNumberVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
