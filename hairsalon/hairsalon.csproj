@@ -146,6 +146,10 @@
     <Compile Include="Migrations\202210131653030_secondmigration.designer.cs">
       <DependentUpon>202210131653030_secondmigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202210151918590_changepass.cs" />
+    <Compile Include="Migrations\202210151918590_changepass.designer.cs">
+      <DependentUpon>202210151918590_changepass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CheckPhoneVM.cs" />
     <Compile Include="Models\EnterPasswordVM.cs" />
@@ -424,6 +428,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202210131653030_secondmigration.resx">
       <DependentUpon>202210131653030_secondmigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202210151918590_changepass.resx">
+      <DependentUpon>202210151918590_changepass.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

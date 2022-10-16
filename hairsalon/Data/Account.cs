@@ -17,7 +17,7 @@ namespace hairsalon.Data
         public string FirstName { get; set; }
         [MaxLength(30)]
         public string LastName { get; set; }
-        [MaxLength(60)]
+        [MaxLength(200)]
         public string Password { get; set; }
 
         public string FullName()

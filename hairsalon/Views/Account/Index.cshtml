@@ -17,7 +17,10 @@
                 <div class="card" style="padding: 20px;">
 
                     <div class="p-5 pt-0">
-                        <form asp-action="Index" method="post">
+                        @using (Html.BeginForm("Index", "Account", FormMethod.Post))
+                        {
+
+
                             <div class="mb-3">
 
                                 <label for="mobileInput">شماره موبایل خود را وارد کنید:</label>
@@ -25,8 +28,9 @@
                                 @Html.ValidationMessageFor(m => m.PhoneNumber, "", new { @class = "text-danger" })
                             </div>
 
-                            <button value="Index" class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">ورود به حساب کاربری</input>
-                        </form>
+                            <input value="ورود به حساب کاربری" class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit" />
+
+                        }
                     </div>
 
                 </div>

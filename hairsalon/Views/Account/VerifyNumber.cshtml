@@ -14,22 +14,26 @@
                 <div class="card" style="padding: 20px;">
 
                     <div class="p-5 pt-0">
-                        <form asp-action="VerifyNumber" method="post">
+                        <span style="color: grey">شماره موبایل شما: @Session["PhoneNumber"] </span>
+                        @Html.ActionLink("تغییر", "Index", "Account")<br />
+
+                        @using (Html.BeginForm("VerifyNumber", "Account", FormMethod.Post))
+                        {
                             <div class="mb-3">
 
-                                <div class="alert alert-success alert-dismissible fade in" style="display:@ViewBag.visible">
-                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <div class="alert alert-danger alert-dismissible" style="display:@ViewBag.visible">
                                     <strong>خطا در فعالسازی</strong>  @ViewBag.error
                                 </div>
-                                <span>دمو: کد فعالسازی: @Session["Code"].ToString()</span>
+                                <span class="text-success">دمو: کد فعالسازی: @Session["Code"].ToString()</span><br />
                                 <label for="codeInput">کد ارسال شده را وارد کنید:</label>
                                 @Html.TextBoxFor(m => m.VerificationCode, new { @class = "form-control rounded-3", @id = "codeInput" })
                                 @Html.ValidationMessageFor(m => m.VerificationCode, "", new { @class = "text-danger" })
 
                             </div>
 
-                            <button value="VerifyNumber" class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">ثبت کد فعالسازی</input>
-                        </form>
+                            <input value="ثبت کد فعالسازی" class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit" />
+                        }
+
                     </div>
 
                 </div>

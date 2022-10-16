@@ -26,11 +26,11 @@ namespace hairsalon.Controllers
         [HttpPost]
         public ActionResult Index(CheckPhoneVM phone)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                 
+
                 var check = _db.Accounts.FirstOrDefault(s => s.PhoneNumber == phone.PhoneNumber);
-                if(check == null)
+                if (check == null)
                 {
                     Session["PhoneNumber"] = phone.PhoneNumber;
                     return VerifyNumber();
@@ -66,7 +66,7 @@ namespace hairsalon.Controllers
                 ViewBag.Description = "کد ارسال شده به شماره موبایل خود را وارد کنید.";
                 return View("VerifyNumber");
             }
-            
+
         }
 
         [HttpPost]
@@ -76,7 +76,7 @@ namespace hairsalon.Controllers
 
             if (ModelState.IsValid)
             {
-                string vcode = (string) Session["Code"];
+                string vcode = Session["Code"].ToString();
                 if (vcode == code.VerificationCode)
                 {
                     Session["Verified"] = true;
@@ -93,7 +93,7 @@ namespace hairsalon.Controllers
             {
                 return View();
             }
-           
+
         }
 
         //setting new password to a new account
@@ -103,7 +103,7 @@ namespace hairsalon.Controllers
         {
             ViewBag.Description = "لطفاً برای حساب خود یک کلمه ی عبور انتخاب کنید.";
             //making sure the action is not manually executed
-            if ((bool)Session["Verified"] != true)
+            if (Session["Verified"] == null)
             {
                 return RedirectToAction("Index");
             }
@@ -111,19 +111,19 @@ namespace hairsalon.Controllers
             {
                 return View("SetPassword");
             }
-            
+
         }
 
-        
+
         [HttpPost]
-        public ActionResult SetPassword(SetPasswordVM password)
+        public ActionResult SetPassword(SetPasswordVM model)
         {
             if (ModelState.IsValid)
             {
                 var user = new Account
                 {
-                    PhoneNumber = (string)Session["PhoneNumber"],
-                    Password = Crypto.HashPassword(password.Password)
+                    PhoneNumber = Session["PhoneNumber"].ToString(),
+                    Password = Crypto.Hash(model.Password, "MD5")
 
                 };
                 _db.Configuration.ValidateOnSaveEnabled = false;
@@ -131,7 +131,9 @@ namespace hairsalon.Controllers
                 _db.SaveChanges();
 
                 //logging in
-                var data = _db.Accounts.Where(s => s.PhoneNumber.Equals(user.PhoneNumber) && s.Password.Equals(user.Password)).ToList();
+                string phone = Session["PhoneNumber"].ToString();
+                string hashedPassword = Crypto.Hash(model.Password, "MD5");
+                var data = _db.Accounts.Where(s => s.PhoneNumber.Equals(phone) && s.Password.Equals(hashedPassword)).ToList();
                 if (data.Count() > 0)
                 {
                     //add session
@@ -140,14 +142,20 @@ namespace hairsalon.Controllers
                     Session["Id"] = data.FirstOrDefault().Id;
                     return RedirectToAction("Dashboard");
                 }
+                return RedirectToAction("Index", "Home");
             }
-            return View();
+            else
+            {
+                return View();
+            }
         }
 
         //entering accounts password (logging in)
         [HttpGet]
         public ActionResult EnterPassword()
         {
+            ViewBag.visible = "none";
+
             //making sure the action is not manually executed
             if (Session["PhoneNumber"] == null)
             {
@@ -160,12 +168,18 @@ namespace hairsalon.Controllers
             }
         }
 
+        [HttpPost]
         public ActionResult EnterPassword(EnterPasswordVM pass)
         {
+            ViewBag.visible = "none";
+
             if (ModelState.IsValid)
             {
+                
                 //logging in
-                var data = _db.Accounts.Where(s => s.PhoneNumber.Equals((string)Session["PhoneNumber"]) && s.Password.Equals(pass.Password)).ToList();
+                string phone = Session["PhoneNumber"].ToString();
+                string hashedPassword = Crypto.Hash(pass.Password, "MD5"); 
+                var data = _db.Accounts.Where(s => s.PhoneNumber == phone && s.Password == hashedPassword).ToList();
                 if (data.Count() > 0)
                 {
                     //add session
@@ -173,6 +187,13 @@ namespace hairsalon.Controllers
                     Session["PhoneNumber"] = data.FirstOrDefault().PhoneNumber;
                     Session["Id"] = data.FirstOrDefault().Id;
                     return RedirectToAction("Dashboard");
+                }
+                else
+                {
+                    ViewBag.visible = "block";
+                    ViewBag.error = "رمز وارد شده صحیح نیست.";
+                    
+                    return View();
                 }
             }
             return View();

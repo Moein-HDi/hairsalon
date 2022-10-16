@@ -10,10 +10,10 @@ namespace hairsalon.Models
     {
 
         [Required(ErrorMessage = "لطفا رمز خود را وارد کنید")]
-        [RegularExpression(@"^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$", ErrorMessage = "رمز باید حداقل 8 رقم، و دارای حداقل یک حرف، یک عدد و یک کاراکتر ویژه باشد")]
+        [RegularExpression("(?=.*[A-Za-z])(?=.*[1234567890])[A-Za-z1234567890]{8,}", ErrorMessage = "رمز باید حداقل 8 رقم، و دارای حرف و عدد باشد")]
         public string Password { get; set; }
         [Required(ErrorMessage ="لطفا تکرار رمز را وارد کنید")]
-        [Compare(nameof(Password))]
+        [Compare("Password", ErrorMessage ="تکرار رمز با رمز وارد شده مطابق نیست")]
         public string RePassword { get; set; }
     }
 }
