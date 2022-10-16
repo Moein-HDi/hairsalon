@@ -16,19 +16,19 @@
             <div class="col-md-6">
                 <div class="card" style="padding: 20px;">
 
-                    <div class="p-5 pt-0">
+                    <div>
                         @using (Html.BeginForm("Index", "Account", FormMethod.Post))
                         {
 
 
                             <div class="mb-3">
 
-                                <label for="mobileInput">شماره موبایل خود را وارد کنید:</label>
+                                <label for="mobileInput" class="mb-1">شماره موبایل خود را وارد کنید:</label>
                                 @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control rounded-3", @maxlength = "11", @id = "mobileInput", @placeholder = "مثال: 09123456789" })
                                 @Html.ValidationMessageFor(m => m.PhoneNumber, "", new { @class = "text-danger" })
                             </div>
 
-                            <input value="ورود به حساب کاربری" class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit" />
+                            <input value="ورود به حساب کاربری" class="w-100 btn btn-lg rounded-3 btn-primary" type="submit" />
 
                         }
                     </div>
