@@ -7,7 +7,7 @@
 /* Fonts */
 @font-face {
   font-family: "Shabnam";
-  src: url('fonts/shabnam/Shabnam.eot') format('eot'), /* IE6–8 */ url('fonts/shabnam/Shabnam.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('fonts/shabnam/Shabnam.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+  src: url('fonts/shabnam/Farsi-Digits/Shabnam-FD.eot') format('eot'), /* IE6–8 */ url('fonts/shabnam/Farsi-Digits/Shabnam-FD.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('fonts/shabnam/Farsi-Digits/Shabnam-FD.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
   font-weight: normal;
   font-style: normal;
 }

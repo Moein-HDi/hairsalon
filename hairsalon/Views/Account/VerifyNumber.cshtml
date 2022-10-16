@@ -14,8 +14,7 @@
                 <div class="card" style="padding: 20px;">
 
                     <div>
-                        <span style="color: darkgrey">شماره موبایل شما: @Session["PhoneNumber"] </span>
-                        @Html.ActionLink("تغییر", "Index", "Account")<br />
+                        
 
                         @using (Html.BeginForm("VerifyNumber", "Account", FormMethod.Post))
                         {
@@ -25,11 +24,13 @@
                                     <strong>خطا در فعالسازی</strong>  @ViewBag.error
                                 </div>
                                 <span class="text-success">دمو: کد فعالسازی: @Session["Code"].ToString()</span><br />
-                                
-                                <label for="codeInput" class="mb-1">کد ارسال شده را وارد کنید:</label>
-                                @Html.TextBoxFor(m => m.VerificationCode, new { @class = "form-control rounded-3", @id = "codeInput" })
-                                @Html.ValidationMessageFor(m => m.VerificationCode, "", new { @class = "text-danger" })
 
+                                <label for="codeInput" class="mb-1">کد ارسال شده را وارد کنید:</label>
+                                @Html.TextBoxFor(m => m.VerificationCode, new { @class = "form-control rounded-3 " + ViewBag.valid, @id = "codeInput" })
+                                @Html.ValidationMessageFor(m => m.VerificationCode, "", new { @class = "text-danger" }) <br />
+                                
+                                <span style="color: darkgrey">شماره موبایل شما: @Session["PhoneNumber"] </span>
+                                @Html.ActionLink("تغییر", "Index", "Account")<br />
                             </div>
 
                             <input value="ثبت کد فعالسازی" class="w-100 btn btn-lg rounded-3 btn-primary" type="submit" />

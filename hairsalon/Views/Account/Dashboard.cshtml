@@ -29,7 +29,13 @@
             <div class="tab-content" id="pills-tabContent">
 
 
-                <div class="tab-pane fade show active" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">...</div>
+                <div class="tab-pane fade show active" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                    <div class="col-md-6">
+                        <br />
+                        <span class="m-3"><strong>نام: </strong>@ViewBag.Name</span><br /><br />
+                        <span class="m-3"><strong>شماره موبایل: </strong>@ViewBag.Phone</span>
+                    </div>
+                </div>
 
 
                 <div class="tab-pane fade" id="pills-edit" role="tabpanel" aria-labelledby="pills-edit-tab" tabindex="0">
@@ -45,7 +51,7 @@
                         </div>
                         <div class="col-12">
                             <label for="inputAddress" class="form-label">شماره موبایل</label>
-                            <input type="tel" class="form-control" id="inputAddress" placeholder="مثال: 09123456789">
+                            <input type="tel" class="form-control" id="inputAddress" value="@ViewBag.phone" disabled>
                         </div>
                         <div class="col-12">
                             <button type="submit" class="btn btn-primary">ویرایش اطلاعات</button>

@@ -9,7 +9,7 @@ namespace hairsalon.Models
     public class VerifyNumberVM
     {
         [Required(ErrorMessage ="لطفاً کد ارسال شده به شماره خود را وارد کنید")]
-        [MaxLength(5)]
+        [MaxLength(5, ErrorMessage ="حداکثر طول کد فعال سازی 5 رقم است")]
         public string VerificationCode { get; set; }
     }
 }

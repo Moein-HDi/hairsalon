@@ -41,7 +41,7 @@ namespace hairsalon.Controllers
                     return EnterPassword();
                 }
             }
-
+            ViewBag.valid = "is-invalid";
             return View();
         }
 
@@ -85,6 +85,7 @@ namespace hairsalon.Controllers
                 else
                 {
                     ViewBag.visible = "block";
+                    ViewBag.valid = "is-invalid";
                     ViewBag.error = "کد وارد شده صحیح نمی باشد.";
                     return View();
                 }
@@ -146,6 +147,7 @@ namespace hairsalon.Controllers
             }
             else
             {
+                ViewBag.valid = "is-invalid";
                 return View();
             }
         }
@@ -191,6 +193,7 @@ namespace hairsalon.Controllers
                 else
                 {
                     ViewBag.visible = "block";
+                    ViewBag.valid = "is-invalid";
                     ViewBag.error = "رمز وارد شده صحیح نیست.";
                     
                     return View();
@@ -203,6 +206,8 @@ namespace hairsalon.Controllers
         //[HttpGet]
         public ActionResult Dashboard()
         {
+            ViewBag.Name = Session["FullName"].ToString();
+            ViewBag.Phone = Session["PhoneNumber"].ToString();
             ViewBag.Description = "پروفایل و تنظیمات حساب شما.";
             return View();
         }
