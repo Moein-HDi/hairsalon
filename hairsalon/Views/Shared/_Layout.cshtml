@@ -59,20 +59,22 @@
             <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li>@Html.ActionLink("صفحه اصلی", "../Home/Index")</li>
-                    <li><a href="../Home#service">خدمات ما</a></li>
-                    <li>@Html.ActionLink("تماس با ما", "Contact")</li>
-                    <li>@Html.ActionLink("درباره ما", "../Home/About")</li>
-                    <li><a class="profile" href="/Account/Dashboard">
-    @if (Session["Id"] != null)
-    {
-        <div>پروفایل شما</div>
-    }
-    else
-    {
-        <div>ورود/ثبت نام</div>
-    }
-                </a></li>
+                    <li>@Html.ActionLink("صفحه اصلی", "Index", "Home")</li>
+                    <li><a href="../Home/Index#service">خدمات ما</a></li>
+                    <li>@Html.ActionLink("تماس با ما", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("درباره ما", "About", "Home")</li>
+                    <li>
+                        <a class="profile" href="/Account/Dashboard">
+                            @if (Session["Id"] != null)
+                            {
+                                <div>پروفایل شما</div>
+                            }
+                            else
+                            {
+                                <div>ورود/ثبت نام</div>
+                            }
+                        </a>
+                    </li>
                 </ul>
 
 

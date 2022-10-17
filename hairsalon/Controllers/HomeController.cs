@@ -16,20 +16,14 @@ namespace hairsalon.Controllers
             return View();
         }
 
-        [UserAuth(Roles = new string[] {"User"})]
+        
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            
 
             return View();
         }
 
-        public ActionResult Login()
-        {
-            return View();
-        }
-
-        [UserAuth(Roles = new string[] {"User"})]
         public ActionResult Contact()
         {
             return View();
