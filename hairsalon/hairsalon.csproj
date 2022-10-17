@@ -134,6 +134,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrustructure\UserAuthAttribute.cs" />
     <Compile Include="Migrations\202210112002531_firstMigration_addDB.cs" />
     <Compile Include="Migrations\202210112002531_firstMigration_addDB.designer.cs">
       <DependentUpon>202210112002531_firstMigration_addDB.cs</DependentUpon>

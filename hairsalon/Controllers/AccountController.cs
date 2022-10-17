@@ -1,14 +1,18 @@
 ﻿using hairsalon.Data;
+using hairsalon.Infrustructure;
 using hairsalon.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace hairsalon.Controllers
 {
+    [AllowAnonymous]
     public class AccountController : Controller
     {
 
@@ -70,6 +74,7 @@ namespace hairsalon.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult VerifyNumber(VerifyNumberVM code)
         {
             ViewBag.visible = "none";
@@ -117,6 +122,7 @@ namespace hairsalon.Controllers
 
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult SetPassword(SetPasswordVM model)
         {
             if (ModelState.IsValid)
@@ -124,7 +130,8 @@ namespace hairsalon.Controllers
                 var user = new Account
                 {
                     PhoneNumber = Session["PhoneNumber"].ToString(),
-                    Password = Crypto.Hash(model.Password, "MD5")
+                    Password = Crypto.Hash(model.Password, "MD5"),
+                    Role = "User"
 
                 };
                 _db.Configuration.ValidateOnSaveEnabled = false;
@@ -138,9 +145,11 @@ namespace hairsalon.Controllers
                 if (data.Count() > 0)
                 {
                     //add session
+                    FormsAuthentication.SetAuthCookie(phone, false);
                     Session["FullName"] = data.FirstOrDefault().FirstName + " " + data.FirstOrDefault().LastName;
                     Session["PhoneNumber"] = data.FirstOrDefault().PhoneNumber;
                     Session["Id"] = data.FirstOrDefault().Id;
+                    Session["UserRole"] = data.FirstOrDefault().Role;
                     return RedirectToAction("Dashboard");
                 }
                 return RedirectToAction("Index", "Home");
@@ -171,6 +180,7 @@ namespace hairsalon.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult EnterPassword(EnterPasswordVM pass)
         {
             ViewBag.visible = "none";
@@ -185,9 +195,11 @@ namespace hairsalon.Controllers
                 if (data.Count() > 0)
                 {
                     //add session
+                    FormsAuthentication.SetAuthCookie(phone, false);
                     Session["FullName"] = data.FirstOrDefault().FirstName + " " + data.FirstOrDefault().LastName;
                     Session["PhoneNumber"] = data.FirstOrDefault().PhoneNumber;
                     Session["Id"] = data.FirstOrDefault().Id;
+                    Session["UserRole"] = data.FirstOrDefault().Role;
                     return RedirectToAction("Dashboard");
                 }
                 else
@@ -203,13 +215,22 @@ namespace hairsalon.Controllers
         }
 
         //profile dashboard for users
-        //[HttpGet]
+        [HttpGet]
+        [UserAuth(Roles = new string[] { "User" })]
         public ActionResult Dashboard()
         {
+
             ViewBag.Name = Session["FullName"].ToString();
             ViewBag.Phone = Session["PhoneNumber"].ToString();
             ViewBag.Description = "پروفایل و تنظیمات حساب شما.";
             return View();
+        }
+
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            Session.Clear();
+            return RedirectToAction("Index", "Home");
         }
     }
 }

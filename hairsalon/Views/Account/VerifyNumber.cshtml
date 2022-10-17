@@ -18,6 +18,7 @@
 
                         @using (Html.BeginForm("VerifyNumber", "Account", FormMethod.Post))
                         {
+                            @Html.AntiForgeryToken()
                             <div class="mb-3">
 
                                 <div class="alert alert-danger alert-dismissible" style="display:@ViewBag.visible">

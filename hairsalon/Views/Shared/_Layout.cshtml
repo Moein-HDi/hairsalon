@@ -63,7 +63,16 @@
                     <li><a href="../Home#service">خدمات ما</a></li>
                     <li>@Html.ActionLink("تماس با ما", "Contact")</li>
                     <li>@Html.ActionLink("درباره ما", "../Home/About")</li>
-                    <li><a class="profile" href="/Account">ورود به حساب</a></li>
+                    <li><a class="profile" href="/Account/Dashboard">
+    @if (Session["Id"] != null)
+    {
+        <div>پروفایل شما</div>
+    }
+    else
+    {
+        <div>ورود/ثبت نام</div>
+    }
+                </a></li>
                 </ul>
 
 
