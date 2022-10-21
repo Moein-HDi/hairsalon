@@ -152,6 +152,8 @@
       <DependentUpon>202210151918590_changepass.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\ChangeNameVM.cs" />
+    <Compile Include="Models\ChangePassVM.cs" />
     <Compile Include="Models\CheckPhoneVM.cs" />
     <Compile Include="Models\EnterPasswordVM.cs" />
     <Compile Include="Models\SetPasswordVM.cs" />
@@ -410,6 +412,8 @@
     <Content Include="Views\Shared\_PartialHeader.cshtml" />
     <Content Include="Views\Account\Dashboard.cshtml" />
     <Content Include="Views\Account\SetPassword.cshtml" />
+    <Content Include="Views\Shared\ChangeName.cshtml" />
+    <Content Include="Views\Shared\ChangePass.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

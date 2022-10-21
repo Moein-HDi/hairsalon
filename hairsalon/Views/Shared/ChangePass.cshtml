@@ -1,0 +1,25 @@
+﻿@model hairsalon.Models.ChangePassVM
+
+@using (Html.BeginForm("ChangePass", "Account", FormMethod.Post, new { @class = "row g-3" }))
+{
+
+    <div class="col-12">
+        <label for="inputFname4" class="form-label">کلمه عبور فعلی:</label>
+        @Html.PasswordFor(m => m.Password, new { @class = "form-control", @id = "inputFname4" })
+        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="col-md-6">
+        <label for="inputFname5" class="form-label">کلمه عبور جدید:</label>
+        @Html.PasswordFor(m => m.NewPassword, new { @class = "form-control", @id = "inputFname5" })
+        @Html.ValidationMessageFor(m => m.NewPassword, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="col-md-6">
+        <label for="inputFname6" class="form-label">تکرار کلمه عبور جدید:</label>
+        @Html.PasswordFor(m => m.NewRePassword, new { @class = "form-control", @id = "inputFname6" })
+        @Html.ValidationMessageFor(m => m.NewRePassword, "", new { @class = "text-danger" })
+    </div>
+
+    <input value="تغییر کلمه عبور" class="btn btn-primary" type="submit" />
+}

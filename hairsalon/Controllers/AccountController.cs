@@ -137,7 +137,7 @@ namespace hairsalon.Controllers
                 _db.Configuration.ValidateOnSaveEnabled = false;
                 _db.Accounts.Add(user);
                 _db.SaveChanges();
-
+               
                 //logging in
                 string phone = Session["PhoneNumber"].ToString();
                 string hashedPassword = Crypto.Hash(model.Password, "MD5");
@@ -224,6 +224,51 @@ namespace hairsalon.Controllers
             ViewBag.Phone = Session["PhoneNumber"].ToString();
             ViewBag.Description = "پروفایل و تنظیمات حساب شما.";
             return View();
+        }
+
+        [HttpPost]
+        [UserAuth(Roles = new string[] { "User" })]
+        public ActionResult ChangeName(ChangeNameVM model)
+        {
+            if (ModelState.IsValid)
+            {
+                string phone = Session["PhoneNumber"].ToString();
+
+                var data = _db.Accounts.Where(s => s.PhoneNumber.Equals(phone)).ToList();
+                if (data.Count() > 0)
+                {
+                    data.FirstOrDefault().FirstName = model.FirstName;
+                    data.FirstOrDefault().LastName = model.LastName;
+                    _db.SaveChanges();
+                    Session["FullName"] = model.FirstName + " " + model.LastName;
+                    return RedirectToAction("Dashboard");
+                }
+            }
+            
+                return View("Dashboard");
+            
+        }
+
+
+        [HttpPost]
+        [UserAuth(Roles = new string[] { "User" })]
+        public ActionResult ChangePass(ChangePassVM model)
+        {
+            if (ModelState.IsValid)
+            {
+                string phone = Session["PhoneNumber"].ToString();
+                string hashedPassword = Crypto.Hash(model.Password, "MD5");
+                var data = _db.Accounts.Where(s => s.PhoneNumber == phone && s.Password == hashedPassword).ToList();
+                if (data.Count() > 0)
+                {
+                    data.FirstOrDefault().Password = Crypto.Hash(model.NewPassword, "MD5");
+                    _db.SaveChanges();
+                    return RedirectToAction("Dashboard");
+                }
+            }
+
+            return View("Dashboard");
+
         }
 
         public ActionResult LogOut()
