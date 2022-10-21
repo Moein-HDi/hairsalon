@@ -2,6 +2,12 @@
 
 @using (Html.BeginForm("ChangePass", "Account", FormMethod.Post, new { @class = "row g-3" }))
 {
+    <div class="alert alert-danger" style="display:@ViewBag.passErrorVisible">
+        تغییر کلمه ی عبور شما با خطا مواجه شد.
+    </div>
+    <div class="alert alert-success" style="display:@ViewBag.passSuccessVisible">
+        تغییر کلمه ی عبور شما با موفقیت انجام شد.
+    </div>
 
     <div class="col-12">
         <label for="inputFname4" class="form-label">کلمه عبور فعلی:</label>

@@ -3,6 +3,12 @@
 @using (Html.BeginForm("ChangeName", "Account", FormMethod.Post, new { @class = "row g-3" }))
 {
 
+    <div class="alert alert-danger" style="display:@ViewBag.nameErrorVisible">
+        تغییر نام شما با خطا مواجه شد.
+    </div>
+    <div class="alert alert-success" style="display:@ViewBag.nameSuccessVisible">
+        تغییر نام شما با موفقیت انجام شد.
+    </div>
 
     <div class="col-md-6">
         <label for="inputFname4" class="form-label">نام</label>
