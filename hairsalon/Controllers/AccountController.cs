@@ -219,11 +219,6 @@ namespace hairsalon.Controllers
         [UserAuth(Roles = new string[] { "User" })]
         public ActionResult Dashboard()
         {
-            ViewBag.infoEnable = "true";
-            ViewBag.nameSuccessVisible = "none";
-            ViewBag.nameErrorVisible = "none";
-            ViewBag.passSuccessVisible = "none";
-            ViewBag.passErrorVisible = "none";
 
             ViewBag.Name = Session["FullName"].ToString();
             ViewBag.Phone = Session["PhoneNumber"].ToString();
@@ -235,11 +230,6 @@ namespace hairsalon.Controllers
         [UserAuth(Roles = new string[] { "User" })]
         public ActionResult ChangeName(ChangeNameVM model)
         {
-            ViewBag.nameSuccessVisible = "none";
-            ViewBag.nameErrorVisible = "none";
-            ViewBag.passSuccessVisible = "none";
-            ViewBag.passErrorVisible = "none";
-
             if (ModelState.IsValid)
             {
                 string phone = Session["PhoneNumber"].ToString();
@@ -251,12 +241,11 @@ namespace hairsalon.Controllers
                     data.FirstOrDefault().LastName = model.LastName;
                     _db.SaveChanges();
                     Session["FullName"] = model.FirstName + " " + model.LastName;
-                    ViewBag.nameSuccessVisible = "block";
-                    return View("Dashboard");
+                    return RedirectToAction("Dashboard");
                 }
             }
-            ViewBag.nameErrorVisible = "block";
-            return View("Dashboard");
+            
+                return View("Dashboard");
             
         }
 
@@ -265,11 +254,6 @@ namespace hairsalon.Controllers
         [UserAuth(Roles = new string[] { "User" })]
         public ActionResult ChangePass(ChangePassVM model)
         {
-            ViewBag.passSuccessVisible = "none";
-            ViewBag.passErrorVisible = "none";
-            ViewBag.nameSuccessVisible = "none";
-            ViewBag.nameErrorVisible = "none";
-
             if (ModelState.IsValid)
             {
                 string phone = Session["PhoneNumber"].ToString();
@@ -279,12 +263,10 @@ namespace hairsalon.Controllers
                 {
                     data.FirstOrDefault().Password = Crypto.Hash(model.NewPassword, "MD5");
                     _db.SaveChanges();
-                    ViewBag.passSuccessVisible = "block";
-                    return View("Dashboard");
+                    return RedirectToAction("Dashboard");
                 }
             }
 
-            ViewBag.passErrorVisible = "block";
             return View("Dashboard");
 
         }
